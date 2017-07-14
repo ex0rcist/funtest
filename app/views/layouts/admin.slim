@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title Funtest admin
+    = csrf_meta_tags
+    
+    = stylesheet_link_tag 'application', media: 'all'
+    = stylesheet_link_tag 'bulma', media: 'all'
+    
+    = Gon::Base.render_data
+    = javascript_include_tag 'admin'
+  
+  body
+    = yield

@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title Funtest
+    = csrf_meta_tags
+    
+    = stylesheet_link_tag 'application', media: 'all'
+    = stylesheet_link_tag 'bulma', media: 'all'
+    
+    = Gon::Base.render_data
+    = javascript_include_tag 'application'
+    = javascript_include_tag 'cable'
+    = action_cable_meta_tag
+  
+  body
+    = yield

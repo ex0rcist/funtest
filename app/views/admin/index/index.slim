@@ -1,0 +1,30 @@
+.container#admin-application
+  section.hero.is-fullheight
+    .hero-body
+      .container
+
+        .columns
+          .column.is-one-third
+          .column
+            .fieldset
+              .field
+                p.control
+                  input.input#rate_input placeholder='Новый курс' v-model="rate" v-on:keyup.enter="submit" type='text'
+                p.help.is-danger v-if="errors.rate"
+                  | {{errors.rate}}
+              
+              .field
+                p.control
+                  input.input#date_input placeholder='Действителен до' v-model="date" v-on:keyup.enter="submit" type='text'
+                p.help.is-danger v-if="errors.date"
+                  | {{errors.date}}
+                p.help v-else=true Дата и время в формате 2017-01-01 00:00:00
+              
+              .field
+                p.control
+                  button.button.is-primary#submit v-on:click="submit" v-bind:class="{'is-loading': loading}" :disabled="loading" Установить
+                p.help v-if="status" {{status}}
+                
+          
+          .column
+      
